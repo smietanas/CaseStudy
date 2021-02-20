@@ -1,5 +1,7 @@
 # Case Study
 
+Recruitment task
+Take a look http://ksmiertka.you2.pl/CaseStudy/form
 ## Get started
 
 ### Clone the repo
