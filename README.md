@@ -2,7 +2,7 @@
 
 Recruitment task
 Take a look.
-http://ksmiertka.you2.pl/CaseStudyS
+http://ksmiertka.you2.pl/CaseStudy
 ## Get started
 
 ### Clone the repo
