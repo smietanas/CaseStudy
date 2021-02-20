@@ -6,7 +6,7 @@
 
 ```shell
 git clone https://github.com/smietanas/CaseStudy
-cd intern-angular
+cd CaseStudy
 ```
 
 ### Install npm packages
