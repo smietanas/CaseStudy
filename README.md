@@ -5,7 +5,7 @@
 ### Clone the repo
 
 ```shell
-git clone https://github.com/bryanforbes/intern-angular
+git clone https://github.com/smietanas/CaseStudy
 cd intern-angular
 ```
 
