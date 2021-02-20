@@ -1,0 +1,44 @@
+// .ng-valid.ng-dirty:not(form) {
+//   border: solid 2px lightgreen;
+// }
+
+@import 'variables';
+
+// .ng-valid:not(form) {
+//   border: solid 2px $color-valid;
+// }
+
+.ng-valid.ng-dirty:not(form) {
+  border: solid 2px $color-valid;
+}
+
+.ng-invalid.ng-dirty:not(form),
+.ng-invalid:not(form).form-submitted {
+  border: solid 2px $color-invalid;
+}
+
+form {
+  padding: 20px 0;
+}
+
+.bolder {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.big {
+  width: 100%;
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: all;
+  }
+}
+
+.back {
+  width: 100px;
+}
+
+.error {
+  color: $color-invalid
+}

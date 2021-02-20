@@ -1,0 +1,133 @@
+<div class="container">
+
+  <form [formGroup]='myFromModel' (ngSubmit)='onSubmit()' class="py-3">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- email -->
+        <div class="from-group py-2">
+          <p class="bolder">E-mail</p> <input class="form-control" type="text" formControlName='email'>
+          <div [hidden]="myFromModel.controls.email.valid || myFromModel.controls.email.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.email.hasError('required')">
+              Email is required!
+            </div>
+            <div class="error" [hidden]="!myFromModel.controls.email.hasError('email')">
+              Wrong format
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- First Name -->
+        <div class="from-group py-2">
+          <p class="bolder">First Name</p> <input class="form-control" type="text" formControlName='firstName'>
+          <div [hidden]="myFromModel.controls.firstName.valid || myFromModel.controls.firstName.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.firstName.hasError('required')">
+              First name is required!
+            </div>
+            <div class="error" [hidden]="!myFromModel.controls.firstName.hasError('minlength')">
+              The first name is too short. Please enter at least 3 characters
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Last name -->
+        <div class="from-group py-2">
+          <p class="bolder">Last Name</p> <input class="form-control" type="text" formControlName='lastName'>
+          <div [hidden]="myFromModel.controls.lastName.valid || myFromModel.controls.lastName.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.lastName.hasError('required')">
+              Last Name is required!
+            </div>
+            <div class="error" [hidden]="!myFromModel.controls.lastName.hasError('minlength')">
+              The last name is too short. Please enter at least 3 characters
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <!-- Gender -->
+        <div class="form-group py-2">
+          <p class="bolder">Gender</p>
+          <select name="gender" id="gender" formControlName='gender' class="form-control">
+            <option value="">-- Select --</option>
+            <option value="male">Male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- street -->
+        <div class="from-group py-2">
+          <p class="bolder">Street</p> <input class="form-control" type="text" formControlName='street'>
+          <div [hidden]="myFromModel.controls.street.valid || myFromModel.controls.street.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.street.hasError('required')">
+              Street is required!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+
+        <!-- town -->
+        <div class="from-group py-2">
+          <p class="bolder">Town</p> <input class="form-control" type="text" formControlName='town'>
+          <div [hidden]="myFromModel.controls.town.valid || myFromModel.controls.town.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.town.hasError('required')">
+              Town is required!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- country -->
+        <div class="from-group py-2">
+          <p class="bolder">Country</p> <input class="form-control" type="text" formControlName='country'>
+          <div [hidden]="myFromModel.controls.country.valid || myFromModel.controls.country.pristine">
+            <div class="error" [hidden]="!myFromModel.controls.country.hasError('required')">
+              Country is required!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <!-- additional data -->
+        <div class="from-group py-2">
+          <p class="bolder">Additional data</p>
+          <textarea class="form-control" rows="5" name="" id="" formControlName='additional'></textarea>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-12 py-2">
+      <button class="btn btn-primary big" [disabled]='myFromModel.invalid'>Submit</button>
+    </div>
+
+  </form>
+<button class="btn btn-primary back" [routerLink]="['/']">Back</button>
+
+
+ 
+
+  <ng-template [ngIf]="showUser">
+    <div class="row">
+      <div class="col-lg-6 ">
+        <div class="card" class="w-100 py-4">
+          <div class="card-header">
+           <span class="bolder">Name: </span> {{showUser?.Name}}
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> <span class="bolder">Address: </span>{{showUser?.Address}}</li>
+            <li class="list-group-item"> <span class="bolder">Email: </span>{{showUser?.Email}}</li>
+            <li class="list-group-item"> <span class="bolder">Additional data: </span>{{showUser?.Additional}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+  </ng-template>
+</div>

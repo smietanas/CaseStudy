@@ -1,0 +1,24 @@
+@import 'variables';
+
+.about {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.case {
+  text-align: center;
+  font-size: $font-normal;
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+@include media (md) {
+  .case {
+    font-size: $font-subtitle-page;
+  }
+}
