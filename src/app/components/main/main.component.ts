@@ -14,7 +14,6 @@ export class MainComponent {
   private subscriptions = new Subscription();
   showUser: User;
 
-  //default form values 
   defaultFormValues: any = {
     gender: "",
     additional: ""
@@ -22,7 +21,7 @@ export class MainComponent {
 
   constructor(private dataService: DataService) { }
 
-//create form controls
+
   myFromModel = new FormGroup({
     firstName: new FormControl('', { validators: [Validators.minLength(3), Validators.required], updateOn: 'blur' }),
     lastName: new FormControl('', { validators: [Validators.minLength(3), Validators.required], updateOn: 'blur' }),
@@ -34,26 +33,26 @@ export class MainComponent {
     additional: new FormControl('', { validators: [], updateOn: 'blur' })
   })
 
-
-//get form values and add to person (BehaviorSubject)
+  /**
+   * getting form values and send to dataService
+   */
   onSubmit(): void {
     const userValues = this.myFromModel.value;
     this.dataService.addUser(userValues);
     this.myFromModel.reset(this.defaultFormValues);
-    this.LogUser();
+    this.logUser();
   }
 
-  //subscribe and log current user
-  LogUser(): void {
+  /**
+   * subscribe and log current user
+   */
+  logUser(): void {
     const sub = this.dataService.person.subscribe((data: User) => {
       this.showUser = data;
       console.log(this.showUser);
-    })
+    });
     this.subscriptions.add(sub);
-    this.subscriptions.unsubscribe()
+    this.subscriptions.unsubscribe();
   }
 
-  // ngOnDestroy(): void {
-  //   this.subscriptions.unsubscribe();
-  // }
 }

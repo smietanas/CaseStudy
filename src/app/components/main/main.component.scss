@@ -1,12 +1,5 @@
-// .ng-valid.ng-dirty:not(form) {
-//   border: solid 2px lightgreen;
-// }
-
 @import 'variables';
 
-// .ng-valid:not(form) {
-//   border: solid 2px $color-valid;
-// }
 
 .ng-valid.ng-dirty:not(form) {
   border: solid 2px $color-valid;

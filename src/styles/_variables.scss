@@ -10,15 +10,14 @@ $color-invalid: #FF0000;
 $color-valid: #00FF00;
 
 
-$breakpoints: (
-  sm: (min-width: 576px),
+$breakpoints: (sm: (min-width: 576px),
   md: (min-width: 768px),
   lg: (min-width: 992px),
   xl: (min-width: 1200px),
   xxl: (min-width: 1440px),
-  );
+);
 
-  
+
 @mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
@@ -28,6 +27,6 @@ $breakpoints: (
 
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }

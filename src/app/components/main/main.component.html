@@ -108,17 +108,17 @@
     </div>
 
   </form>
-<button class="btn btn-primary back" [routerLink]="['/']">Back</button>
+  <button class="btn btn-primary back" [routerLink]="['/']">Back</button>
 
 
- 
+
 
   <ng-template [ngIf]="showUser">
     <div class="row">
       <div class="col-lg-6 ">
         <div class="card" class="w-100 py-4">
           <div class="card-header">
-           <span class="bolder">Name: </span> {{showUser?.Name}}
+            <span class="bolder">Name: </span> {{showUser?.Name}}
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"> <span class="bolder">Address: </span>{{showUser?.Address}}</li>
@@ -128,6 +128,6 @@
         </div>
       </div>
     </div>
-  
+
   </ng-template>
 </div>

@@ -1,19 +1,19 @@
 @import 'variables';
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navbar-brand{
+.navbar-brand {
   margin: 0;
   padding: 15px;
   border-bottom: 1px solid $color-main;
   transition: color 0.3s ease, border-bottom-color 0.3s ease;
-  &:hover{
+
+  &:hover {
     color: $color-second;
     border-bottom-color: $color-second;
   }
 }
-

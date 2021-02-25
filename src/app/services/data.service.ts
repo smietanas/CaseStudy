@@ -10,15 +10,15 @@ export class DataService {
   person = new BehaviorSubject<User>(null);
 
 
-//add new user to person
-  addUser(person):void {
+  //add new user to person
+  addUser(person: any): void {
     const user: User = {
       Name: `${person.firstName}, ${person.lastName}`,
       Email: `${person.email}`,
       Address: `${person.street}, ${person.town}, ${person.country}`,
       Additional: `${person?.gender} ${person.gender && person.additional ? ',' : ''} ${person?.additional}`,
     }
-    
+
     this.person.next(user);
   }
 
